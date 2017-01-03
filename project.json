@@ -17,8 +17,7 @@
     "Microsoft.Extensions.Logging.Debug": "1.1.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.0",
     "Microsoft.AspNetCore.StaticFiles": "1.1.0",
-    "EntityFramework": "7.0.0-beta4",
-    "runtime.ubuntu.14.04-x64.Microsoft.NETCore.Jit": "1.1.0"
+    "EntityFramework": "7.0.0-beta4"
   },
   "tools": {
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.1.0-preview4-final"
