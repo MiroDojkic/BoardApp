@@ -7,8 +7,6 @@ namespace FesbBoard.Domain.Entities
 {
     public class User
     {
-        public User()
-        {
-        }
+        public string Username { get; }
     }
 }
