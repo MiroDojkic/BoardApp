@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "Microsoft.NETCore.App": "1.1.0",
+    "Microsoft.NETCore.App": "1.0.0-preview2.1-003177",
     "Microsoft.AspNetCore.Mvc": "1.1.0",
     "Microsoft.AspNetCore.Routing": "1.1.0",
     "Microsoft.AspNetCore.Server.IISIntegration": "1.1.0",
