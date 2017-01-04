@@ -8,6 +8,7 @@ namespace FesbBoard.Domain.Queries
 {
     public interface IUserRepository
     {
+        void Add(Entities.User user);
         IReadOnlyCollection<Entities.User> GetAll();
     }
 }
