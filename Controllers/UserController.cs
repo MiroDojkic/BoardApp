@@ -6,8 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using FesbBoard.Domain.Queries;
 using entities = FesbBoard.Domain.Entities;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace FesbBoard.Controllers
 {
     [Route("api/[controller]")]
@@ -19,6 +17,7 @@ namespace FesbBoard.Controllers
         }
         public IUserRepository Users { get; set; }
         
+        [Route("all")]
         [HttpGet]
         public IReadOnlyCollection<entities.User> GetAll()
         {
