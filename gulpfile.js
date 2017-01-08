@@ -1,7 +1,8 @@
 "use strict";
 
-var gulp     = require("gulp");
+var gulp       = require("gulp");
 var rimraf     = require("rimraf");
+var watchify   = require("watchify");
 var browserify = require("browserify");
 var bubleify   = require("bubleify");
 var source     = require("vinyl-source-stream");
@@ -33,7 +34,7 @@ gulp.task("clean:css", function (cb) {
 gulp.task("clean", ["clean:js", "clean:css"]);
 
 gulp.task("min:js", function(){
-  browserify(paths.rootJs)
+  watchify(browserify(paths.rootJs))
     .transform(bubleify, ["es2015", "react"])
     .bundle()
     .pipe(source("bundle.js"))
