@@ -275,3 +275,6 @@ __pycache__/
 
 # EF migrations
 Migrations/*
+
+# Bundled and minified JS
+wwwroot/public/js/bundle.js
