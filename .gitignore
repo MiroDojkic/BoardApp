@@ -278,3 +278,6 @@ Migrations/*
 
 # Bundled and minified JS
 wwwroot/public/js/bundle.js
+
+# Local gulp tasks
+gulpfile.js
