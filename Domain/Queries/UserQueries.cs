@@ -1,22 +1,22 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using FesbBoard.Domain.Entities;
+using FesbBoard.Data.Models;
+using FesbBoard.Domain.Mappers;
 
 namespace FesbBoard.Domain.Queries
 {
-    public class UserRepository : IUserRepository
+    public class UserQueries : IUserQueries
     {
-        public UserRepository()
+        public UserQueries()
         {
-            Add(new Entities.User(username: "staff"));
         }
-
         public void Add(Entities.User user)
         {
             using (var db = new UserContext())
             {
-                db.Users.Add(user);
+                // To implement - mapper from dto to entity and vice versa
+                db.Users.Add(UserMappers.entityToDto(user));
                 var numberOfChanges = db.SaveChanges();
                 Console.WriteLine("{0} records saved to database", numberOfChanges);
             }
@@ -26,7 +26,7 @@ namespace FesbBoard.Domain.Queries
         {
             using (var db = new UserContext())
             {
-                return db.Users.Select(user => user).ToList();
+                return db.Users.Select(user => user).Select(UserMappers.dtoToEntity).ToList();
             }
         }
     }

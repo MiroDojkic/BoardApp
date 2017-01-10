@@ -32,7 +32,7 @@ namespace FesbBoard
             // Add framework services.
             services.AddMvc();
 
-            services.AddSingleton<IUserRepository, UserRepository>();
+            services.AddSingleton<IUserQueries, UserQueries>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
