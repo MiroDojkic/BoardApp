@@ -13,7 +13,7 @@ namespace FesbBoard.Domain.Queries
         }
         public void Add(Entities.User user)
         {
-            using (var db = new UserContext())
+            using (var db = new FesbBoardDbContext())
             {
                 // To implement - mapper from dto to entity and vice versa
                 db.Users.Add(UserMappers.entityToDto(user));
@@ -24,7 +24,7 @@ namespace FesbBoard.Domain.Queries
 
         public IReadOnlyCollection<Entities.User> GetAll()
         {
-            using (var db = new UserContext())
+            using (var db = new FesbBoardDbContext())
             {
                 return db.Users.Select(user => user).Select(UserMappers.dtoToEntity).ToList();
             }
