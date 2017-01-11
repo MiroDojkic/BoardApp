@@ -6,9 +6,9 @@ using entities = FesbBoard.Domain.Entities;
 namespace FesbBoard.Controllers
 {
     [Route("api/[controller]")]
-    public class UserController : Controller
+    public class UsersController : Controller
     {
-        public UserController(IUserQueries users)
+        public UsersController(IUserQueries users)
         {
             Users = users;
         }
