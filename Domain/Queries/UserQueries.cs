@@ -8,25 +8,21 @@ namespace FesbBoard.Domain.Queries
 {
     public class UserQueries : IUserQueries
     {
-        public UserQueries()
+        private FesbBoardDbContext _context;
+        public UserQueries(FesbBoardDbContext context)
         {
+            _context = context;
         }
         public void Add(Entities.User user)
         {
-            using (var db = new FesbBoardDbContext())
-            {
-                db.Users.Add(UserMappers.entityToDto(user));
-                var numberOfChanges = db.SaveChanges();
-                Console.WriteLine("{0} records saved to database", numberOfChanges);
-            }
+            _context.Users.Add(UserMappers.entityToDto(user));
+            var numberOfChanges = _context.SaveChanges();
+            Console.WriteLine("{0} records saved to database", numberOfChanges);
         }
 
         public IReadOnlyCollection<Entities.User> GetAll()
         {
-            using (var db = new FesbBoardDbContext())
-            {
-                return db.Users.Select(UserMappers.dtoToEntity).ToList();
-            }
+            return _context.Users.Select(UserMappers.dtoToEntity).ToList();
         }
     }
 }

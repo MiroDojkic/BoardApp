@@ -8,25 +8,21 @@ namespace FesbBoard.Domain.Queries
 {
     public class BoardQueries : IBoardQueries
     {
-        public BoardQueries()
+        private FesbBoardDbContext _context;
+        public BoardQueries(FesbBoardDbContext context)
         {
+            _context = context;
         }
         public void Add(Entities.Board board)
         {
-            using (var db = new FesbBoardDbContext())
-            {
-                db.Boards.Add(BoardMappers.entityToDto(board));
-                var numberOfChanges = db.SaveChanges();
-                Console.WriteLine("{0} records saved to database", numberOfChanges);
-            }
+           _context.Boards.Add(BoardMappers.entityToDto(board));
+           var numberOfChanges = _context.SaveChanges();
+           Console.WriteLine("{0} records saved to database", numberOfChanges);
         }
 
         public IReadOnlyCollection<Entities.Board> GetAll()
         {
-            using (var db = new FesbBoardDbContext())
-            {
-                return db.Boards.Select(BoardMappers.dtoToEntity).ToList();
-            }
+           return _context.Boards.Select(BoardMappers.dtoToEntity).ToList();
         }
     }
 }

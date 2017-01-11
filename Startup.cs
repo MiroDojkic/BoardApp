@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FesbBoard.Data.Models;
 using FesbBoard.Domain.Queries;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 
 namespace FesbBoard
 {
@@ -31,7 +33,7 @@ namespace FesbBoard
         {
             // Add framework services.
             services.AddMvc();
-
+            services.AddDbContext<FesbBoardDbContext>(options => options.UseSqlite("Filename=./fesbboard.db"));
             services.AddSingleton<IUserQueries, UserQueries>();
             services.AddSingleton<IBoardQueries, BoardQueries>();
         }
