@@ -33,6 +33,7 @@ namespace FesbBoard
             services.AddMvc();
 
             services.AddSingleton<IUserQueries, UserQueries>();
+            services.AddSingleton<IBoardQueries, BoardQueries>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

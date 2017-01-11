@@ -6,26 +6,26 @@ using FesbBoard.Domain.Mappers;
 
 namespace FesbBoard.Domain.Queries
 {
-    public class UserQueries : IUserQueries
+    public class BoardQueries : IBoardQueries
     {
-        public UserQueries()
+        public BoardQueries()
         {
         }
-        public void Add(Entities.User user)
+        public void Add(Entities.Board board)
         {
             using (var db = new FesbBoardDbContext())
             {
-                db.Users.Add(UserMappers.entityToDto(user));
+                db.Boards.Add(BoardMappers.entityToDto(board));
                 var numberOfChanges = db.SaveChanges();
                 Console.WriteLine("{0} records saved to database", numberOfChanges);
             }
         }
 
-        public IReadOnlyCollection<Entities.User> GetAll()
+        public IReadOnlyCollection<Entities.Board> GetAll()
         {
             using (var db = new FesbBoardDbContext())
             {
-                return db.Users.Select(UserMappers.dtoToEntity).ToList();
+                return db.Boards.Select(BoardMappers.dtoToEntity).ToList();
             }
         }
     }
