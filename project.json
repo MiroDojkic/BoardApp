@@ -6,24 +6,24 @@
     },
     "Microsoft.AspNetCore.Mvc": "1.1.0",
     "Microsoft.AspNetCore.Routing": "1.1.0",
+    "Microsoft.AspNetCore.Diagnostics": "1.1.0",
     "Microsoft.AspNetCore.Server.IISIntegration": "1.1.0",
     "Microsoft.AspNetCore.Server.Kestrel": "1.1.0",
+    "Microsoft.Extensions.Logging": "1.1.0",
+    "Microsoft.Extensions.Logging.Debug": "1.1.0",
+    "Microsoft.Extensions.Logging.Console": "1.1.0",
     "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.1.0",
     "Microsoft.Extensions.Configuration.FileExtensions": "1.1.0",
     "Microsoft.Extensions.Configuration.Json": "1.1.0",
     "Microsoft.Extensions.Configuration.CommandLine": "1.1.0",
-    "Microsoft.Extensions.Logging": "1.1.0",
-    "Microsoft.Extensions.Logging.Console": "1.1.0",
-    "Microsoft.Extensions.Logging.Debug": "1.1.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.0",
     "Microsoft.AspNetCore.StaticFiles": "1.1.0",
-    "BundlerMinifier.Core": "2.2.306",
     "Microsoft.EntityFrameworkCore.Sqlite": "1.1.0",
     "Microsoft.EntityFrameworkCore.Design": {
       "version": "1.1.0",
       "type": "build"
     }
-},
+  },
   "tools": {
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.1.0-preview4-final",
     "Microsoft.EntityFrameworkCore.Tools.DotNet": "1.1.0-preview4-final"
@@ -32,8 +32,7 @@
     "netcoreapp1.1": {
       "imports": [
         "dotnet5.6",
-        "dnxcore50",
-        "portable-net452+win81"
+        "portable-net45+win8"
       ]
     }
   },
@@ -49,8 +48,6 @@
   "publishOptions": {
     "include": [
       "wwwroot",
-      "**/*.cshtml",
-      "appsettings.json",
       "web.config"
     ]
   },
@@ -60,6 +57,6 @@
     ]
   },
   "tooling": {
-    "defaultNamespace": "FesbBoard"
+    "defaultNamespace": "FesbBoardBackend"
   }
 }

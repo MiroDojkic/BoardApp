@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace FesbBoard.Data.Models
+namespace FesbBoardBackend.Models
 {
     public class FesbBoardDbContext : DbContext
     {

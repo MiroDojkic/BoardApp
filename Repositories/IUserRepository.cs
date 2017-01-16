@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using FesbBoard.Domain.Entities;
+using FesbBoardBackend.Models;
 
-namespace FesbBoard.Domain.Queries
+namespace FesbBoardBackend.Repositories
 {
-    public interface IUserQueries
+    public interface IUserRepository
     {
         void Add(User user);
         IReadOnlyCollection<User> GetAll();

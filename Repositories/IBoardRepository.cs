@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using FesbBoard.Domain.Entities;
+using FesbBoardBackend.Models;
 
-namespace FesbBoard.Domain.Queries
+namespace FesbBoardBackend.Repositories
 {
-    public interface IBoardQueries
+    public interface IBoardRepository
     {
         void Add(Board board);
         IReadOnlyCollection<Board> GetAll();
