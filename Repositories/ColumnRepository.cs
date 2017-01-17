@@ -1,14 +1,27 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using FesbBoardBackend.Models;
 
 namespace FesbBoardBackend.Repositories
 {
-    public class ColumnRepository
+    public class ColumnRepository : IColumnRepository
     {
-        public ColumnRepository()
+        private FesbBoardDbContext _context;
+        public ColumnRepository(FesbBoardDbContext context)
         {
+            _context = context;
+        }
+        public void Add(Column column)
+        {
+            _context.Columns.Add(column);
+            var numberOfChanges = _context.SaveChanges();
+            Console.WriteLine("{0} records saved to database", numberOfChanges);
+        }
+
+        public IReadOnlyCollection<Column> GetAll()
+        {
+            return _context.Columns.ToList();
         }
     }
 }

@@ -1,11 +1,11 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using FesbBoardBackend.Models;
 
 namespace FesbBoardBackend.Repositories
 {
-    interface IColumnRepository
+    public interface IColumnRepository
     {
+        void Add(Column column);
+        IReadOnlyCollection<Column> GetAll();
     }
 }

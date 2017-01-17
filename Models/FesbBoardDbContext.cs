@@ -8,9 +8,10 @@ namespace FesbBoardBackend.Models
             :base(options)
         {
         }
-        public DbSet<User>  Users  { get; set; }
-        public DbSet<Board> Boards { get; set; }
-        public DbSet<Card>  Cards  { get; set; }
+        public DbSet<User>   Users  { get; set; }
+        public DbSet<Board>  Boards { get; set; }
+        public DbSet<Card>   Cards  { get; set; }
+        public DbSet<Column> Columns{ get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

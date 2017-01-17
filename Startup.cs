@@ -30,6 +30,7 @@ namespace FesbBoardBackend
             services.AddSingleton<IUserRepository, UserRepository>();
             services.AddSingleton<IBoardRepository, BoardRepository>();
             services.AddSingleton<ICardRepository, CardRepository>();
+            services.AddSingleton<IColumnRepository, ColumnRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
