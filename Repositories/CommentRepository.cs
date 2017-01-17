@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using FesbBoardBackend.Models;
 
 namespace FesbBoardBackend.Repositories
@@ -21,7 +20,7 @@ namespace FesbBoardBackend.Repositories
         }
         public IReadOnlyCollection<Comment> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Comments.ToList();
         }
     }
 }
