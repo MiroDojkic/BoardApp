@@ -15,7 +15,7 @@ namespace FesbBoardBackend.Repositories
         }
         public void Add(Comment comment)
         {
-            _context.Comments.Add();
+            _context.Comments.Add(comment);
             var numberOfChanges = _context.SaveChanges();
             Console.WriteLine("{0} records saved to database", numberOfChanges);
         }
