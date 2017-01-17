@@ -7,5 +7,6 @@ namespace FesbBoardBackend.Repositories
     {
         void Add(User user);
         IReadOnlyCollection<User> GetAll();
+        User GetById(int id);
     }
 }

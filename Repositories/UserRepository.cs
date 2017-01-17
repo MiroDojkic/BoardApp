@@ -22,5 +22,9 @@ namespace FesbBoardBackend.Repositories
         {
             return _context.Users.ToList();
         }
+        public User GetById(int id)
+        {
+            return _context.Users.Where(user => user.Id == id).SingleOrDefault();
+        }
     }
 }

@@ -28,9 +28,9 @@ namespace FesbBoardBackend.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public User Get(int id)
         {
-            return "value";
+            return _users.GetById(id);
         }
 
         // POST api/values
