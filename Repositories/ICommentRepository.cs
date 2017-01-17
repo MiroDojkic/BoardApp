@@ -1,11 +1,11 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using FesbBoardBackend.Models;
 
 namespace FesbBoardBackend.Repositories
 {
-    interface ICommentRepository
+    public interface ICommentRepository
     {
+        void Add(Comment comment);
+        IReadOnlyCollection<Comment> GetAll();
     }
 }
