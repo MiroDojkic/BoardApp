@@ -35,8 +35,9 @@ namespace FesbBoardBackend.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]User user)
         {
+            _users.Add(user);
         }
 
         // PUT api/values/5
