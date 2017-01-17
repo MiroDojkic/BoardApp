@@ -18,7 +18,6 @@ namespace FesbBoardBackend.Repositories
             var numberOfChanges = _context.SaveChanges();
             Console.WriteLine("{0} records saved to database", numberOfChanges);
         }
-
         public IReadOnlyCollection<Column> GetAll()
         {
             return _context.Columns.ToList();
