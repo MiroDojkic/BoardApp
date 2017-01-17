@@ -10,6 +10,7 @@ namespace FesbBoardBackend.Models
         }
         public DbSet<User>  Users  { get; set; }
         public DbSet<Board> Boards { get; set; }
+        public DbSet<Card>  Cards  { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

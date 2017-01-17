@@ -5,22 +5,22 @@ using FesbBoardBackend.Models;
 
 namespace FesbBoardBackend.Repositories
 {
-    public class UserRepository : IUserRepository
+    public class CardRepository : ICardRepository
     {
         private FesbBoardDbContext _context;
-        public UserRepository(FesbBoardDbContext context)
+        public CardRepository(FesbBoardDbContext context)
         {
             _context = context;
         }
-        public void Add(User user)
+        public void Add(Card card)
         {
-            _context.Users.Add(user);
+            _context.Cards.Add(card);
             var numberOfChanges = _context.SaveChanges();
             Console.WriteLine("{0} records saved to database", numberOfChanges);
         }
-        public IReadOnlyCollection<User> GetAll()
+        public IReadOnlyCollection<Card> GetAll()
         {
-            return _context.Users.ToList();
+            return _context.Cards.ToList();
         }
     }
 }

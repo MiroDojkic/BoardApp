@@ -29,6 +29,7 @@ namespace FesbBoardBackend
             services.AddDbContext<FesbBoardDbContext>(options => options.UseSqlite("Filename=./fesbboard.db"));
             services.AddSingleton<IUserRepository, UserRepository>();
             services.AddSingleton<IBoardRepository, BoardRepository>();
+            services.AddSingleton<ICardRepository, CardRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
